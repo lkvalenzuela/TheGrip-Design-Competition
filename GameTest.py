@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-display_debug = True
+display_debug = False
 text_debug = False
 ############
 # Camera
@@ -198,10 +198,10 @@ while (not stop):
         if start_state and ready_toThrow:
             # Ready ...
             arm.gotoPoint(xp,yp,zp)
-            time.sleep(0.5)
+            time.sleep(1.5)
             # Set ...
             arm.gotoPoint(xs,ys,zs)
-            time.sleep(0.5)
+            time.sleep(1.5)
             # Go!!
             arm.goDirectlyTo(xe,ye,ze)
             time.sleep(0.2)
@@ -215,5 +215,5 @@ while (not stop):
         except: stop = True 
 
 # Clean up
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
 GPIO.cleanup()
